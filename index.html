@@ -6,15 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
     <script src="index.js"></script>
-    <style src="assets/styles.css"></style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header class="header">
             <h1>Rock, Paper, Scissors</h1>
-            <button id="restart" class="restart-btn">New Game</button>
-
+            <button id="restart" class="restart-btn">Restart Game</button>
+            <div id="score" class="score">
+                <p>Player: 0</p>
+                <p>Computer: 0</p>
+            </div>
         </header>
+        <h2>Choose Carefully...</h2>
+            <img src="assets/rock.png" alt="hand in fist" style="width: 250px">
+            <img src="assets/paper.png" alt="open hand" style="width: 250px">
+            <img src="assets/scissors.png" alt="hand as scissors" style="width: 250px">
+        <div class="choices"></div>
+            <i id="rock" class="rock.png"></i>
+            <i id="paper" class="paper.png"></i>
+            <i id="scissors" class="scissors.png"></i>
+        </div>
     </div>
+<!--Modal-->
+    <div class="modal">
+        <div id="result" class="modal-content">
+            <h1>You Win</h1>
+            <img src="assets/rock.png" alt="hand in fist" style="width: 250px"></i>
+            <p>Computer Chose Rock</p>
+        </div>
+
+    </div>
+        
+
+    <script src="index.js"></script>
 </body>
 </html>
