@@ -61,15 +61,17 @@ margin-bottom: 1rem;
 .choices {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
+    grid-gap: 4rem;
     margin-top: 3rem;
     text-align: center;
 }
 
-.choices {
+
+
+img {
     cursor: pointer;
 }
 
-.choices.choices:hover {
+img:hover {
     color: crimson;
 }
