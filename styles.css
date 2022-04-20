@@ -66,12 +66,22 @@ margin-bottom: 1rem;
     text-align: center;
 }
 
-
-
-img {
+.choice {
     cursor: pointer;
 }
 
-img:hover {
-    color: crimson;
+.choice:hover {
+    color: var(--primary-color);
+}
+
+@media(max-width: 700px) {
+    .choice {
+        font-size: 110px;
+    }
+}
+
+@media(max-width: 500px) {
+    .choice {
+        font-size: 80px;
+    }
 }
