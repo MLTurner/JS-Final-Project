@@ -16,9 +16,9 @@ function play(e) {
     restart.style.display = 'inline-block';
     const playerChoice = e.target.id;
     const computerChoice = getComputerChoice();
-   const winner = getWinner(playerChoice, computerChoice);
+    const winner = getWinner(playerChoice, computerChoice);
 
-   console.log(playerChoice, computerChoice, winner);
+   showWinner(winner, computerChoice);
 }
 
 //Get computer choice
@@ -77,11 +77,31 @@ function showWinner(winner, computerChoice) {
     <p>Computer chose <strong>${computerChoice}</strong></p>
     `;
     }
-    score.innerHTML = `<p>Player: ${scoreboard.player}`
+    score.innerHTML = 
+    `<p>Player: ${scoreboard.player}</p>
+    <p>Computer: ${scoreboard.computer}</p>`;
+    
+    modal.style.display = 'block';  
 }
 
+//Restart Game
+function restartGame(){
+    scoreboard.player = 0;
+    scoreboard.computer = 0;
+    score.innerHTML = `
+    <p>Player: 0</p>
+    <p>Computer: 0</p>
+    `;
+}
 
-
+//Clear modal
+function clearModal(e) {
+    if(e.target == modal) {
+    modal.style.display = 'none';
+    }
+}
 
 // Event Listeners to loop through our choices
 choices.forEach(choice => choice.addEventListener('click', play));
+window.addEventListener('click', clearModal);
+restart.addEventListener('click', restartGame);
