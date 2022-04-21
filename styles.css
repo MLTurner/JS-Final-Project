@@ -28,6 +28,7 @@ font-size: 1rem;
 cursor: pointer;
 outline: none;
 border: none;
+margin-bottom: 1rem;
 }
 
 .restart-btn:hover {
@@ -71,7 +72,15 @@ margin-bottom: 1rem;
 }
 
 .choice:hover {
-    color: var(--primary-color);
+    color: crimson;
+}
+
+.text-win {
+    color: var(--win-color);
+}
+
+.text-lose {
+    color: var(--lose-color)
 }
 
 @media(max-width: 700px) {
