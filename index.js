@@ -1,4 +1,4 @@
-//defining our icons of rock, paper, scissors
+//Selecting icons of rock, paper, scissors
 const choices = document.querySelectorAll('.fa-solid');
 
 //defining our score
@@ -19,6 +19,13 @@ function play(e) {
     const winner = getWinner(playerChoice, computerChoice);
 
    showWinner(winner, computerChoice);
+}
+
+function majority(){
+    if (scoreboard.player === 3){
+        
+    }
+
 }
 
 //Get computer choice

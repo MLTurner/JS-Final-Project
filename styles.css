@@ -28,6 +28,7 @@ font-size: 1rem;
 cursor: pointer;
 outline: none;
 border: none;
+border-radius: 25px;
 margin-bottom: 1rem;
 }
 
@@ -45,18 +46,31 @@ margin-bottom: 1rem;
 }
 
 .score {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    /*grid-template-columns: repeat(2, 1fr);*/
+    border-radius: 25px;
     font-size: 1.2rem;
     color: #fff;
 }
 
 .score p:first-child {
     background-color: navy;
+    border-radius: 25px;
+    padding: 0.4rem 1.3rem;
 }
 
 .score p:last-child {
     background-color: darkolivegreen;
+    border-radius: 25px;
+    padding: 0.4rem 1.3rem;
+}
+
+#rock {
+    transform: rotate(90deg);
 }
 
 .choices {
@@ -72,7 +86,7 @@ margin-bottom: 1rem;
 }
 
 .choice:hover {
-    color: crimson;
+    color: rgb(170, 152, 169);
 }
 
 .text-win {
