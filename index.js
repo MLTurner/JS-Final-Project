@@ -1,7 +1,7 @@
 //Selecting icons of rock, paper, scissors
 const choices = document.querySelectorAll('.fa-solid');
 
-//defining our score
+//Variables to define the key parts of the game
 const score = document.getElementById('score');
 const result = document.getElementById('result');
 const restart = document.getElementById('restart');
@@ -11,7 +11,9 @@ const scoreboard = {
     computer: 0
 }
 
-// Play game
+//Play the game: user clicks target of rock, paper, or scissors
+//Computer makes its choice
+//Winner is determined by comparing the two, then displayed
 function play(e) {
     restart.style.display = 'inline-block';
     const playerChoice = e.target.id;
@@ -21,14 +23,6 @@ function play(e) {
    showWinner(winner, computerChoice);
 }
 
-function majority(){
-    if (scoreboard.you === 3){
-        return result.innerHTML = `<h2>You win 3 out of 5!</h2>`
-    }
-    if (scoreboard.computer === 3){
-        return result.innerHTML = `<h2>The Computer wins 3 out of 5!<h2>`
-    }
-}
 
 //Get computer choice
 function getComputerChoice() {
@@ -42,7 +36,7 @@ function getComputerChoice() {
         }
 }
 
-// get game winner
+//If/else statements to compare choices and determine winner
 function getWinner(p, c) {
     if(p === c) {
         return 'draw';
@@ -67,6 +61,8 @@ function getWinner(p, c) {
     }
 }
 
+//Scoreboard increments by 1 to player or computer, or a tie is declared
+//Interpolated strings to dynamically place choices within HTML in modal
 function showWinner(winner, computerChoice) {
     if(winner === 'you') {
     scoreboard.you++;
@@ -93,7 +89,7 @@ function showWinner(winner, computerChoice) {
     modal.style.display = 'block';  
 }
 
-//Restart Game
+//Restart Game to set scoreboard to 0
 function restartGame(){
     scoreboard.you = 0;
     scoreboard.computer = 0;
@@ -102,15 +98,15 @@ function restartGame(){
     <p>Computer: 0</p>`;
 }
 
-//Clear modal
+//Click outside the modal to make it disappear
 function clearModal(e) {
     if(e.target == modal) {
     modal.style.display = 'none';
     }
 }
 
-// Event Listeners to loop through our choices
+
+//Event Listeners to loop through the options, clear modal and restart
 choices.forEach(choice => choice.addEventListener('click', play));
 window.addEventListener('click', clearModal);
 restart.addEventListener('click', restartGame);
-majority()
