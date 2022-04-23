@@ -22,9 +22,9 @@
     animation-duration: var(--modal-duration);
 }
 
-#rock {
+/*.choices > #rock {
     transform: rotate(90deg);
-}
+}*/
 
 .modal-content h1 {
     margin-bottom: 1rem;

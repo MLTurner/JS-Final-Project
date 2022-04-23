@@ -75,7 +75,7 @@ font-size: 50px;
 }
 
 .score p:first-child {
-    background-color: rgb(238, 215, 197);
+    background-color: rgb(164, 100, 51);
     border-radius: 25px;
     padding: 0.4rem 1.3rem;
 }
@@ -94,9 +94,9 @@ margin-bottom: 1em;
 }
 
 
-#rock {
+/*#rock {
     transform: rotate(90deg);
-}
+}*/
 
 .choices {
     display: grid;
