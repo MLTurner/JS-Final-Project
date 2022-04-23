@@ -11,7 +11,7 @@
 }
 
 .modal-content {
-    background-color: white;
+    background-color: blanchedalmond;
     text-align: center;
     margin: 10% auto;
     width: 350px;
@@ -22,12 +22,18 @@
     animation-duration: var(--modal-duration);
 }
 
-.modal-content h1 {
-    margin-bottom: 1rem;
+#rock {
+    transform: rotate(90deg);
 }
 
+.modal-content h1 {
+    margin-bottom: 1rem;
+    color:black;
+}
+
+
 .modal-content p {
-    font-size: 1.2rem;
+    font-size: 25px;
     margin-top: 1rem;
 }
 

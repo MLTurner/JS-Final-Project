@@ -7,7 +7,7 @@ const result = document.getElementById('result');
 const restart = document.getElementById('restart');
 const modal = document.querySelector('.modal');
 const scoreboard = {
-    player: 0,
+    you: 0,
     computer: 0
 }
 
@@ -22,10 +22,12 @@ function play(e) {
 }
 
 function majority(){
-    if (scoreboard.player === 3){
-        
+    if (scoreboard.you === 3){
+        return result.innerHTML = `<h2>You win 3 out of 5!</h2>`
     }
-
+    if (scoreboard.computer === 3){
+        return result.innerHTML = `<h2>The Computer wins 3 out of 5!<h2>`
+    }
 }
 
 //Get computer choice
@@ -48,26 +50,26 @@ function getWinner(p, c) {
         if(c === 'paper') {
         return 'computer';
         } else {
-        return 'player';
+        return 'you';
         }
     } else if( p === 'paper') {
         if(c === 'scissors') {
         return 'computer';
         } else {
-        return 'player';
+        return 'you';
         }
     } else if(p === 'scissors') {
         if (c === 'rock') {
         return 'computer';
         } else {
-        return 'player';
+        return 'you';
         }
     }
 }
 
 function showWinner(winner, computerChoice) {
-    if(winner === 'player') {
-    scoreboard.player++;
+    if(winner === 'you') {
+    scoreboard.you++;
     result.innerHTML = `<h1 class="text-win">You Win!</h1>
     <i class="fa-solid fa-hand-${computerChoice} fa-10x"></i>
     <p>Computer chose <strong>${computerChoice}</strong></p>
@@ -79,13 +81,13 @@ function showWinner(winner, computerChoice) {
     <p>Computer chose <strong>${computerChoice}</strong></p>
     `;
     } else {
-    result.innerHTML = `<h1>It's a Draw!</h1>
+    result.innerHTML = `<h1>It's a Tie!</h1>
     <i class="fa-solid fa-hand-${computerChoice} fa-10x"></i>
     <p>Computer chose <strong>${computerChoice}</strong></p>
     `;
     }
     score.innerHTML = 
-    `<p>Player: ${scoreboard.player}</p>
+    `<p>You: ${scoreboard.you}</p>
     <p>Computer: ${scoreboard.computer}</p>`;
     
     modal.style.display = 'block';  
@@ -93,12 +95,11 @@ function showWinner(winner, computerChoice) {
 
 //Restart Game
 function restartGame(){
-    scoreboard.player = 0;
+    scoreboard.you = 0;
     scoreboard.computer = 0;
-    score.innerHTML = `
-    <p>Player: 0</p>
-    <p>Computer: 0</p>
-    `;
+    score.innerHTML = 
+    `<p>You: 0</p>
+    <p>Computer: 0</p>`;
 }
 
 //Clear modal
@@ -112,3 +113,4 @@ function clearModal(e) {
 choices.forEach(choice => choice.addEventListener('click', play));
 window.addEventListener('click', clearModal);
 restart.addEventListener('click', restartGame);
+majority()
